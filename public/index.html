@@ -46,25 +46,27 @@
   </div>
 
 </form>
+
   <button id="compute"> Compute </button>
 
-
-
-  <!-- peut etre input doit etre en button -->
   <div id="actors"></div>
+  <script>
+
+$('#compute').click(function() {
+   //optionally remove the 500 (which is time in milliseconds) of the
+   //scrolling animation to remove the animation and make it instant
+   $.scrollTo($('#actors'), 500);
+});
+</script>
+
   <script id="template" type="x-tmpl-mustache">
 
-
-    $("button").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".actors").offset().top},
-        'slow');
-});
       {{#actors}}
         <div class="actor">
           <span>{{who}}</span>
           <span>{{type}}</span>
           <span>{{amount}}</span>
+          <br> </br>
         </div>
       {{/actors}}
     </script>
