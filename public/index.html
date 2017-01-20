@@ -1,23 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
+<head>
+  <title>Drivy !</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="index.css" rel="stylesheet" type="text/css">    <!-- main css -->
+  <script src="https://use.fontawesome.com/d1e8efe0b9.js"></script>
+</head>
+<body>
+
+ <form>
+  <h1>Welcome to Drivy</h1>
+  <p>Suiting up our application for the WOW effect</p>
+  <div id="car">
+  <div class='formInput'>
+    <i class='fa fa-car'></i>
+    <input class="model" type="text" placeholder="Car model"/>
+    <input class="price-by-day" type="number" placeholder="Price by day"/>
+    <input class="price-by-km" type="number" placeholder="Price by km"/>
+  </div>
+  </div>
+  <div id="rental">
+
+  <div class='formInput'>
+    <input class="distance" type="number" placeholder="Distance in km"/>
+
+  </div>
+
+  <el> Deductible option : </el> 
+  <input class="option" type="checkbox" placeholder="Deductible option"/> 
+
+
+  <div class='formInput dateSelector'>
+    <i class='fa fa-calendar-o'></i>
+    <input class='begin' type='date' placeholder='Pick-up date' />
+  </div>
+
+  <div class='formInput dateSelector'>
+    <i class='fa fa-calendar-o'></i>
+    <input class='end' type='date' placeholder='Return date' />
+  </div>
+
+  </div>
+
+</form>
+  <button id="compute"> Compute </button>
+
+
+
+  <!-- peut etre input doit etre en button -->
+  <div id="actors"></div>
+  <script id="template" type="x-tmpl-mustache">
+
+
+    $("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".actors").offset().top},
+        'slow');
+});
       {{#actors}}
         <div class="actor">
           <span>{{who}}</span>
@@ -26,8 +68,10 @@
         </div>
       {{/actors}}
     </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
-  </body>
+
+</body>
 </html>
