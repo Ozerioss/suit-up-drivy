@@ -6,7 +6,6 @@
 
 
 
-
 h1 {
   font: 100 4em/1em Lato;
   margin: 0;
@@ -21,7 +20,30 @@ body {
 form {
   width: 400px;
   padding: 55px 0 0 40px;
-  margin-left: 5%;
+  margin-left: 34%;
+}
+
+
+#actors
+{
+    clear : bottom;
+    margin-left : 37%;
+    margin-top : 50px;
+    margin-bottom : 50px;
+
+    display: table;
+    font: 100 1.2em/16px "Lato";
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    text-align: center;
+    height: 50px;
+    margin: 10px 0 8px 37%;
+    padding: 16px 24px;
+    background: #808080;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    transition:  background-color .1s, color .2s, box-shadow .3s;
 }
 
 #compute
@@ -32,7 +54,7 @@ form {
     text-transform: uppercase;
     text-align: center;
     height: 50px;
-    margin: 8px 0 8px 110px;
+    margin: 10px 0 8px 37%;
     padding: 16px 24px;
     background: #808080;
     color: white;
